@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+- Added a producer/receipt/verifier/consumer flow diagram, complete POSIX and
+  PowerShell quickstarts with expected output, all eight verifier states and
+  CLI exit codes, metadata badges, and inline protocol/conformance links.
+- Hardened the consumer example to reconstruct current facts independently,
+  hash saved result bytes, fail closed with gate exit codes, and optionally
+  export current action facts without overwriting evidence. The producer now
+  saves a companion result file; custom inputs and result paths are supported.
+- Added regression coverage for the walkthrough, current-state and trust
+  separation, result integrity, error handling, all CLI state/exit combinations,
+  and README metadata/link consistency.
+- Updated package and security-reporting links to the current repository owner.
+  The protocol schemas, core verifier, and package version remain unchanged.
+
 - Added an independent .NET 8 conformance consumer and required .NET CI
   coverage. This is repository-controlled cross-runtime evidence, not external
   adoption evidence.

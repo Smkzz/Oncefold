@@ -24,10 +24,11 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/Smkz-Entertainment/Oncefold"
-Repository = "https://github.com/Smkz-Entertainment/Oncefold"
-Documentation = "https://github.com/Smkz-Entertainment/Oncefold/tree/main/docs"
-Issues = "https://github.com/Smkz-Entertainment/Oncefold/issues"
+Homepage = "https://github.com/Smkzz/Oncefold"
+Repository = "https://github.com/Smkzz/Oncefold"
+Documentation = "https://github.com/Smkzz/Oncefold/tree/main/docs"
+Issues = "https://github.com/Smkzz/Oncefold/issues"
+Changelog = "https://github.com/Smkzz/Oncefold/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
 dev = [
