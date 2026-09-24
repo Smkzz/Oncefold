@@ -13,7 +13,7 @@ Oncefold remains pre-1.0.
 ## Reporting a vulnerability
 
 Please do not publish secrets or an exploitable proof in an issue. Use
-[GitHub's private vulnerability reporting](https://github.com/Smkz-Entertainment/Oncefold/security/advisories/new)
+[GitHub's private vulnerability reporting](https://github.com/Smkzz/Oncefold/security/advisories/new)
 for sensitive reports. Do not include sensitive details in a public issue.
 Include the affected version or commit, a minimal reproduction, impact, and
 whether data could be exposed.
