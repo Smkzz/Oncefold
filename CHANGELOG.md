@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Reject nested MCP tool errors, malformed error flags, and JSON-RPC failures
+  before recording a reusable shadow receipt; failed forwarded calls remain
+  observable without hashing protocol error codes as result data.
+- Update the Go Unicode dependency to `golang.org/x/text` 0.42.0 for
+  GO-2026-5970 and require Go 1.26 or later. Raise the pytest development minimum
+  to 9.0.3 for CVE-2025-71176.
+
 - Added a producer/receipt/verifier/consumer flow diagram, complete POSIX and
   PowerShell quickstarts with expected output, all eight verifier states and
   CLI exit codes, metadata badges, and inline protocol/conformance links.

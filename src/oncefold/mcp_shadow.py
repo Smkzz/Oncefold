@@ -93,7 +93,16 @@ class MCPShadowProxy:
 
     @staticmethod
     def _eligible(result: Mapping[str, Any], side_effect_class: SideEffectClass) -> bool:
-        return side_effect_class is SideEffectClass.READ_ONLY and result.get("isError") is not True
+        if side_effect_class is not SideEffectClass.READ_ONLY or "error" in result:
+            return False
+        # Accept both a bare CallToolResult and a JSON-RPC response envelope.
+        # An error (or malformed error flag) cannot become exact reuse evidence.
+        value = result.get("result", result)
+        return (
+            isinstance(value, Mapping)
+            and result.get("isError", False) is False
+            and value.get("isError", False) is False
+        )
 
     @staticmethod
     def _metadata(
@@ -224,7 +233,11 @@ class MCPShadowProxy:
             dependency_completeness=dependency_completeness,
         )
         actual_result = call(request)
-        actual_digest = self._result_digest(actual_result)
+        actual_digest = (
+            self._result_digest(actual_result)
+            if self._eligible(actual_result, side_effect_class)
+            else None
+        )
         prior_digest = (
             prior.receipt.digest
             if prior.receipt is not None
